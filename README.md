@@ -29,15 +29,19 @@ I am actively working on the following features to build upon the current founda
    cd 2026-WC-Fan-Zone
    ```
 2. **Install dependencies:**
+
    ```bash
-   npm install
+   pnpm install
    ```
+
+   Note: This project has been refactored to use pnpm instead of npm. pnpm is used for better performance and more efficient disk space usage, which are considered best practices for modern JavaScript projects.
+
 3. **Set up Firebase:**
    - Create a Firebase project at [Firebase Console](https://console.firebase.google.com/).
    - Add your Firebase config to a `.env.local` file as described in the project.
 4. **Run the development server:**
    ```bash
-   npm start OR npm run dev
+   pnpm start OR pnpm run dev
    ```
 5. **Open your browser:**  
    Visit `http://localhost:####` to view the app.
