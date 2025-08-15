@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- head
+
+        Purpose:
+        - Title used here shows up in the browser tab
+        - Link to the favicon (small image that appears in the browser tab)
+        - Link to the CSS file (used to style the webpage)
+
+        -->
+
+        <!-- Implement fonts being used -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+        
+        <title>World Cup 2026 Watch Party</title>
+
+        <!-- Link my styles.css file -->
+        <link rel="stylesheet" href="styles.css">
+        
+        <!-- Add Favicon -->
+        <link rel="icon" href="./img/worldcup-icon.png" type="image/png">
+
+    </head>
+    
+    <body>
+        <!-- Navbar class -->
+        <nav class="navbar">
+
+            <!-- Brand logo in corner -->
+            <div class="logo">
+                <a href="index.html" aria-label="Home">
+                    <img src="./img/worldcup-icon.png" alt="FanZone Logo" />
+                </a>
+            </div>
+            
+            <!-- List nav links -->
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#bracket">Bracket Challenge</a></li>
+                <li><a href="#gallery">Community</a></li>
+                <li><a href="#rsvp">RSVP</a></li>
+                <li><a href="#links">Explore</a></li>
+            </ul>
+
+            <!-- Add Theme Mode Toggle (Light v Dark) -->
+            <button class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">☾</button>
+        </nav>
+        
+        <!-- headings
+        
+        Purpose:
+        - Main header section of the webpage
+        - Contains the title, subtitle, image, and key buttons for the webpage
+        
+        -->
+
+        <!-- Refactor into hero section -->
+        <section class="hero">
+            <!-- Implementing bg image in CSS -->
+            <h1>FIFA FanZone 2026</h1>
+            <h2>The Beautiful Game We Love</h2>
+            <div class="countdown">
+                <div class="time-box">
+                    <div class="time" id="days">00</div>
+                    <div class="label">Days</div>
+                </div>
+                <span class="colon">:</span>
+                <div class="time-box">
+                    <div class="time" id="hours">00</div>
+                    <div class="label">Hours</div>
+                </div>
+                <span class="colon">:</span>
+                <div class="time-box">
+                    <div class="time" id="minutes">00</div>
+                    <div class="label">Minutes</div>
+                </div>
+                <span class="colon">:</span>
+                <div class="time-box">
+                    <div class="time" id="seconds">00</div>
+                    <div class="label">Seconds</div>
+                </div>
+            </div>
+            
+            <!-- group "buttons" in div -->
+            <div class="cta-buttons">
+                <a href="#rsvp" class="cta-button">RSVP NOW</a>
+                <a href="#schedule" class="cta-button">VIEW SCHEDULE</a>
+            </div>
+        </section>
+        
+        <!-- Breaking News Ticker Bar: WORK ON LAST
+        <section class="news" id="news">
+            <div class="news-ticker">
+                <div class="news-track">
+                    The text inside span is [PLACEHOLDER]
+                    <span>🌍 FIFA confirms kickoff times • ⚽ Countdown to June 11 continues! </span>
+                </div>
+            </div>
+        </section>
+        -->
+        
+        <!-- about
+        
+        Purpose:
+        - Section for general info about the event
+        - Contains a video, description, and key points about the event
+        
+        -->
+        
+        <section class="about" id="about">
+            <h2>About the Event</h2>
+            <div class="about-content">
+
+                <div class="about-description">
+                    <p><b>
+                        The FIFA FanZone 2026 is not just a watch party. It is a celebration of football, culture, and connection<br><br>
+                        Join fans from around the world to experience every match live, surrounded by energy, passion, and community. From pre-game hype to post-match reactions, there is something for everyone. Whether you're a die-hard supporter or just in it for the vibes, you're welcome here<br><br>
+                        No matter where we gather — at a public venue or an epic home setup — you can expect cheers, food, music, and unforgettable moments<br><br>
+                        This is where moments become memories. Come celebrate the beautiful game with us
+                    </b></p>
+                </div>
+
+                <div class="about-expectations">
+                    <h3>What to Expect</h3>
+                    <!-- Declare List <ul> -->
+                    <ul>
+                        <!-- List Items <li> -->
+                        <li>
+                            <img src="./img/confetti-animation.gif" alt="Confetti Animation"/>
+                            <b>Game & Atmosphere</b> <br>
+                            <i>Catch every goal, roar with the crowd, and feel the energy of the world's biggest stage!</i>
+                        </li>
+                        <li>
+                            <img src="./img/fun&food-icon.gif" alt="Food Animation"/>
+                            <b>Fun & Food</b> <br>
+                            <i>Enjoy tasty bites, cold drinks, and thrilling activities for all ages — halftime has never been better!</i>
+                        </li>
+                        <li>
+                            <img src="./img/memories-icon.gif" alt="Memories Animation"/>
+                            <b>Engagement & Memories</b> <br>
+                            <i>Connect with fellow fans, snap photos, and embrace unforgettable moments as each match unfolds!</i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- schedule
+        
+        Purpose:
+        - Section for specific info about the event's schedule
+        - Contains images and descriptions of each activity
+                
+        -->
+
+        <section class="schedule" id="schedule">
+            <h2>Game Schedule</h2>
+            <!-- Make layout of the matches
+                 Purpose: This container will help organize what content to show 
+                          & CSS help how it displays
+            -->
+            
+            <div class="match-layout">
+                <!-- Make a grid, arrow on right side to cycle through rest-->
+                <div class="match-grid" id="first-matches">
+                    <!-- Make list of the games -->
+                    <!-- Hard code first 12 example games -->
+                    <!-- Show first 6 [3x2], then next 6 when press arrow -->
+    
+                    <!-- Game 1 -->
+                    <div class="match-card">
+                        <p><strong>Team A</strong> vs <strong>Team B</strong></p>
+                        <p>Kickoff: TBD EST</p>
+                        <p>@ [Stadium]</p>
+                    </div>
+    
+                    <!-- Game 2 -->
+                    <div class="match-card">
+                        <p><strong>Team C</strong> vs <strong>Team D</strong></p>
+                        <p>Kickoff: TBD EST</p>
+                        <p>@ [Stadium]</p>
+                    </div>
+                    
+                    <!-- Game 3 -->
+                    <div class="match-card">
+                        <p><strong>Team E</strong> vs <strong>Team F</strong></p>
+                        <p>Kickoff: TBD EST</p>
+                        <p>@ [Stadium]</p>
+                    </div>
+                    
+                    <!-- Game 4 -->
+                    <div class="match-card">
+                        <p><strong>Team G</strong> vs <strong>Team H</strong></p>
+                        <p>Kickoff: TBD EST</p>
+                        <p>@ [Stadium]</p>
+                    </div>
+
+                    <!-- Game 5 -->
+                    <div class="match-card">
+                        <p><strong>Team I</strong> vs <strong>Team J</strong></p>
+                        <p>Kickoff: TBD EST</p>
+                        <p>@ [Stadium]</p>
+                    </div>
+
+                    <!-- Game 6 -->
+                    <div class="match-card">
+                        <p><strong>Team K</strong> vs <strong>Team L</strong></p>
+                        <p>Kickoff: TBD EST</p>
+                        <p>@ [Stadium]</p>
+                    </div>
+                </div>
+    
+                <!-- Arrow Button -->
+                <button class="scroll-btn" aria-label="See more matches">➭</button>
+            </div>
+
+            <!-- Upcoming Matches (Later on in schedule) -->
+             <!-- Keep outside layout nest, show these games after button pressed -->
+            <div class="match-grid" id="upcoming-matches">
+                <!-- Games 7-12 (later 6) -->
+                <div class="match-card">
+                    <p><strong>Team M</strong> vs <strong>Team N</strong></p>
+                    <p>Kickoff: TBD EST</p>
+                    <p>@ [Stadium]</p>
+                </div>
+                <div class="match-card">
+                    <p><strong>Team O</strong> vs <strong>Team P</strong></p>
+                    <p>Kickoff: TBD EST</p>
+                    <p>@ [Stadium]</p>
+                </div>
+                <div class="match-card">
+                    <p><strong>Team Q</strong> vs <strong>Team R</strong></p>
+                    <p>Kickoff: TBD EST</p>
+                    <p>@ [Stadium]</p>
+                </div>
+                <div class="match-card">
+                    <p><strong>Team S</strong> vs <strong>Team T</strong></p>
+                    <p>Kickoff: TBD EST</p>
+                    <p>@ [Stadium]</p>
+                </div>
+                <div class="match-card">
+                    <p><strong>Team U</strong> vs <strong>Team V</strong></p>
+                    <p>Kickoff: TBD EST</p>
+                    <p>@ [Stadium]</p>
+                </div>
+                <div class="match-card">
+                    <p><strong>Team W</strong> vs <strong>Team X</strong></p>
+                    <p>Kickoff: TBD EST</p>
+                    <p>@ [Stadium]</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Bracket Predictions -->
+        <section class="bracket" id="bracket">
+            <h2>Who will lift the cup this year?</h2>
+            <h3>Submit your pick below!</h3>
+
+            <!-- Implement dropdown for simplicity -->
+            <form id="bracket-form">
+                <label for="winner-pick">Champion:</label>
+                <!-- Note: 48 participating countries in the tournament -->
+                <!-- ie. 48 choices for champion -->
+                <div class="country-dropdown" id="country-dropdown">
+                    <div class="selected">Crown your Champion</div>
+                    <ul class="dropdown-list"></ul>
+                </div>
+                <input type="hidden" name="winner" id="winner-input">
+                <button type="submit" class="submitBtn" id="winner-submit-btn">Submit</button>
+            </form>
+        </section>
+        
+        <!-- Bracket Modal -->
+        <div class="modal" id="bracket-modal">
+            <div class="bracket-modal-content">
+                <div class="bracket-left">
+                    <h2 id="bracket-modal-title">Country Name</h2>
+                    <div id="winner-flag">
+                        Country Flag<!-- Flag will be injected here -->
+                    </div>
+                    <p id="bracket-modal-description">Predicted 2026 FIFA World Cup Winner!</p>
+                </div>
+                <div class="bracket-right">
+                    <img src="img/worldcup-icon.png" alt="World Cup Trophy" class="trophy-animation">
+                    <button class="close-btn">ⓧ</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bracket Leaderboard -->
+        <section class="leaderboard" hidden>
+            <h2>Bracket Leaderboard</h2>
+            <p><b>Check in on who's leading in the Bracket Challenge! Stay updated throughout the tournament and see who all rises and falls after each matchday!</b></p>
+
+            <!-- Construct a table with top X number of players -->
+            <table class="leaderboard-table">
+                <!-- Make header titles -->
+                <thead id="leaderboard-header">
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Pick</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+
+                <!-- Construct body with players -->
+                <tbody class="leaderboard-entries">
+                    <!-- Top 3 need unique ids for podium placement -->
+                    <tr id="first-place">
+                        <td>1</td>
+                        <td>Player 1</td>
+                        <td>Team A</td>
+                        <td>12 pts</td>
+                    </tr>
+                    <tr id="second-place">
+                        <td>2</td>
+                        <td>Player 2</td>
+                        <td>Team B</td>
+                        <td>10 pts</td>
+                    </tr>
+                    <tr id="third-place">
+                        <td>3</td>
+                        <td>Player 3</td>
+                        <td>Team C</td>
+                        <td>9 pts</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Player 4</td>
+                        <td>Team D</td>
+                        <td>7 pts</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- Community Gallery -->
+        <section class="gallery" id="gallery">
+            <h2>Community Gallery! Stay Connected!</h2>
+
+            <!-- Wrap the elements to construct layout -->
+            <!-- Just like I did for About Section -->
+            <div class="gallery-layout">
+                <!-- Left Side: Description -->
+                <div class="gallery-description">
+                    <p><b>Browse all photos from our fan community and relive iconic moments!</b></p>
+                </div>
+    
+                <!-- Right Side: Gallery Media -->
+                <div class="gallery-media">
+                    <!-- Left Side: Photo Carousel -->
+                    <div class="photos">
+                        <button class="carousel-btn" id="prev-photo" aria-label="Previous photo">➭</button>
+                        <img id="current-photo" src="./img/placeholder.png" aria-label="Current photo"/>
+                        <button class="carousel-btn" id="next-photo" aria-label="Next photo">➭</button>
+                    </div>
+                    
+                    <!-- Right Side: Embedded Video(s) -->
+                    <div class="videos">
+                        <button class="carousel-btn" id="prev-video" aria-label="Previous video">➭</button>
+                        <iframe
+                        src="https://www.youtube.com/embed/WIaWTESJjrg"
+                        frameborder="0"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                        <!-- iframe breakdown
+                        - frameborder="0": removes the default border around the iframe
+                        - allow= ... gives video permissions:
+                        Permissions
+                        >> accelerometer: Tracks device linear tilt/motion
+                        >> clipboard-write: Allows copying to clipboard (for share buttons, etc.)
+                        >> encrypted-media: Allows video player to play protected content/media (DRM)
+                        -->
+                        </iframe>
+                        <button class="carousel-btn" id="next-video" aria-label="Next video">➭</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- RSVP Section -->
+        <section class="rsvp" id="rsvp">
+            <h2>RSVP! Join the FanZone!</h2>
+
+            <div class="rsvp-content">
+                <!-- Left side: Paragraph -->
+                <div class="rsvp-left">
+                    <p><b>Reserve your spot for the ultimate World Cup celebration! Meet fellow fans, enjoy live matches, and take part in exciting community events!</b></p>
+                </div>
+                
+                <!-- Right side: RSVP List -->
+                <div class="rsvp-right">
+                    <p><b>Total RSVPs:</b> <span id="rsvp-count">0</span></p>
+                    <ul id="rsvp-list" class="rsvp-list">
+                        <!-- RSVPs will be listed here and counted -->
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Have RSVP form below paragraph and list of RSVPs -->
+            <form id="rsvp-form">
+                <label for="user-name">Name</label>
+                <input type="text" id="user-name" name="user-name" placeholder="Enter Name" required>
+                
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter Email Address" required>
+                
+                <label for="home-country">Home Country</label>
+                <div id="home-country-dropdown" class="country-dropdown">
+                    <div class="selected">Home Country</div>
+                    <ul class="dropdown-list"></ul>
+                    <input type="hidden" id="home-country" name="home-country" required>
+                </div>
+
+                <button class="submitBtn" type="submit">Submit RSVP</button>
+            </form>
+        </section>
+            
+        <!-- Success Modal -->
+        <div class="modal" id="rsvp-modal">
+            <div class="rsvp-modal-content">
+                <h2 id="modal-title">MODIFIED IN JS</h2>
+                <div class="modal-animation">
+                    <!-- Default animation here -->
+                    <img src="./img/confetti-animation.gif" alt="Success Animation" class="modal-animation">
+                </div>
+                <p id="modal-description">MODIFIED IN JS</p>
+                <button id="close-rsvp" class="close-btn">ⓧ</button>
+            </div>
+        </div>
+
+        <!-- links
+         
+            Purpose:
+            - Links to other resources related to the event
+            
+        -->
+        
+        <!-- This <a> block is one link.  Copy and paste all 6 lines to create another link.
+            <a class="block" href="https://www.codepath.org">
+                <article>
+                    <h3>Link title</h3>
+                    <p>Link description</p>
+                </article>
+            </a>
+        -->
+            
+        <section class="links" id="links">
+            <h2>Explore Additional Links</h2>
+            <p id="links-description"><b>Stay connected with the world of football! Explore these links for the latest news, match results, player stats, and in-depth analysis from top sports sources.</b></p>
+            
+            <a class="block" href="https://www.fifa.com" target="_blank" rel="noopener noreferrer">
+                <article>
+                    <h3>FIFA.com</h3>
+                    <p class="article-descriptions">Official site for the 2026 World Cup, teams, schedules, and global football news.</p>
+                </article>
+            </a>        
+            
+            <a class="block" href="https://www.fotmob.com" target="_blank" rel="noopener noreferrer">
+                <article>
+                    <h3>FotMob</h3>
+                    <p class="article-descriptions">Real-time match scores, player stats, and in-depth analytics.</p>
+                </article>
+            </a>
+            
+            <a class="block" href="https://onefootball.com" target="_blank" rel="noopener noreferrer">
+                <article>
+                    <h3>OneFootball</h3>
+                    <p class="article-descriptions">Follow global football news, transfers, and team updates in one app.</p>
+                </article>
+            </a>
+
+            <a class="block" href="https://www.goal.com" target="_blank" rel="noopener noreferrer">
+                <article>
+                    <h3>Goal.com</h3>
+                    <p class="article-descriptions">Breaking news, match highlights, and coverage of every major football league.</p>
+                </article>
+            </a>
+
+            <a class="block" href="https://www.transfermarkt.us/" target="_blank" rel="noopener noreferrer">
+                <article>
+                    <h3>Transfermarkt</h3>
+                    <p class="article-descriptions">Explore player market values, team rosters, and detailed transfer histories.</p>
+                </article>
+            </a>
+        </section>
+        
+        <!-- Footer -->
+        <footer>
+            <h2>Contact Us</h2>
+            <div class="social-links">
+                <a href="https://www.instagram.com/kaleb.rodriguez07/" target="_blank" rel="noopener noreferrer">
+                    <img src="img/social-icons/instagram-48.png" alt="Instagram Profile">
+                </a>
+                <a href="https://t.snapchat.com/ejFzd6qa" target="_blank" rel="noopener noreferrer">
+                    <img src="img/social-icons/snapchat-black.png" alt="Snapchat Profile" class="light-icon">
+                    <img src="img/social-icons/snapchat-yellow.png" alt="Snapchat Profile" class="dark-icon">
+                </a>
+                <a href="https://github.com/krod7" target="_blank" rel="noopener noreferrer">
+                    <img src="img/social-icons/github-mark-black.png" alt="GitHub Profile" class="light-icon">
+                    <img src="img/social-icons/github-mark-white.png" alt="GitHub Profile" class="dark-icon">
+                </a>
+                <a href="https://www.linkedin.com/in/kaleb-rodriguez7" target="_blank" rel="noopener noreferrer">
+                    <img src="img/social-icons/linkedin-48.png" alt="LinkedIn Profile">
+                </a>
+            </div>
+            <p>&copy; 2026 FIFA FanZone. All rights reserved. Email us at <a href="mailto:info@fanzone2026.com">info@fanzone2026.com</a></p>
+        </footer>
+        
+        <!-- script -->
+        <!-- Link my script.js file -->
+        <script type=module src="script2.js"></script>
+
+    </body>
+</html>

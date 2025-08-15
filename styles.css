@@ -1,0 +1,972 @@
+/* root is used to define CSS vars for repeated use throughout webpage */
+:root {
+    /* Color Palette */
+    /* Primary Colors: Homage to 2014 Brasil World Cup */
+    --canary-yellow: #FFCC00;
+    --verdant-green: #009739;
+    --ocean-blue: #3E8EDE;
+    --sunset-orange: #FF6F3C;
+    /* Accent Colors: 2026 Host Nations */
+    --maple-red: #D72638; /* Canada */
+    --desert-sage: #B5C9A5; /* Mexico */
+    --patriot-blue: #1C3F94; /* USA */
+    /* Neutral Colors */
+    --cloud-white: #F4F4F4;
+    --ash-grey: #CCCCCC;
+    --charcoal: #2e2e2e;
+    /* Leaderboard Podium */
+    --gold: #FFD700;
+    --silver: #c0c0c0;
+    --bronze: #CD7F32;
+
+    /* Extras for Dark Mode */
+    --sky-blue: #00bfff;
+
+    /* Fonts */
+    --kalam-font: 'Kalam';
+    --marker-font: 'Permanent Marker';
+    --countdown-font: 'Monoton';
+    --ticker-font: 'Roboto Mono';
+}
+
+/* Universal Selector */
+/* Reset all elements to remove browser default spacing & fix box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Element Selectors */
+html {
+    scroll-behavior: smooth;
+    /* Offset navbar height */
+    scroll-padding-top: 80px;
+}
+
+body {
+    background-color: var(--cloud-white);
+    color: var(--charcoal);
+    font-family: var(--kalam-font);
+    line-height: 1.5;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--marker-font);
+    color: var(--patriot-blue);
+    text-align: center;
+}
+
+/* Physical Links */
+/* LVHA: Links, Visited, Hover, Active */
+a {
+    color: var(--ocean-blue);
+    text-decoration: none;
+    transition: all 0.4s ease;
+    
+    &:hover {
+        color: var(--sunset-orange);
+    }
+}
+
+
+
+/* Class Selectors */
+/* Nav Bar Section */
+/* Need to modify later & implement Collapsed Hamburger Menu */
+.navbar {
+    background-color: var(--patriot-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    padding: 0 32px;
+    box-shadow: 0 2px 10px var(--ocean-blue);
+    border-bottom: 2px solid var(--canary-yellow);
+    z-index: 1;
+    
+    /* Nav Logo */
+    .logo img {
+        height: 50px;
+        width: auto;
+    }
+    
+    /* Nav Links */
+    .nav-links {
+        /* remove bullet points */
+        list-style: none;
+        text-decoration: none;
+        display: flex;
+        gap: 32px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        
+        li, a {
+            color: var(--cloud-white);
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            
+            &:hover {
+                color: var(--sunset-orange);
+            }
+        }
+    }
+    
+    /* Theme Button */
+    .theme-toggle {
+        background: transparent;
+        color: var(--cloud-white);
+        border-color: var(--cloud-white);
+        border-radius: 16px;
+        padding: 4px 6px;
+        font-size: 20px;
+        
+        &:hover {
+            cursor: pointer;
+            transition: all 0.5s ease;
+            color: var(--canary-yellow);
+        }
+    }
+}
+
+
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 80px;
+    margin-bottom: 16px;
+    padding: 32px;
+    
+    /* Personal Change to Headers */
+    /* Make them pop from img background */
+    h1 {
+        font-size: 50px;
+        color: var(--maple-red);
+    }
+    h2 {
+        font-size: 35px;
+    }
+    
+    /* Add Background Image */
+    background-image: url(./img/soccer-banner.jpg); /* Image path in url */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Call-to-Action Buttons */
+    .cta-buttons {
+        /* Button Arrangement */
+        display: flex;
+        gap: 24px;
+        
+        /* Button Looks and Behavior */
+        .cta-button {
+            background-color: var(--canary-yellow);
+            font-family: var(--kalam-font);
+            color: var(--charcoal);
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            
+            &:hover {
+                /* Change color when hovering */
+                /* Make it known where user mouse is */
+                background-color: var(--sunset-orange);
+                outline: 2px dashed var(--sunset-orange);
+                outline-offset: 4px;
+            }
+        }
+    }
+    
+    /* Countdown Timer */
+    .countdown {
+        /* Code for whole countdown section */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 16px;
+        gap: 16px;
+        font-size: 30px;
+        font-family: var(--countdown-font);
+        color: var(--canary-yellow);
+        
+        .time-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .label {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .colon {
+            align-self: baseline;
+        }
+    }
+}
+
+
+/* Breaking News Ticker Bar
+.news {
+    ...
+}
+*/
+
+
+/* About Section */
+.about {
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 16px;
+    
+    .about-content {
+        /* Code for the html child divs */
+        /* Content Layout and Spacing */
+        display: grid;
+        /* Make 2 equal-width columns */
+        /* fr = fractional unit, 1fr + 1fr = 100% of containers available space */
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        padding: 16px;
+        justify-content: space-between;
+        text-align: center;
+        
+        .about-description {
+            /* Text, padding, boxing, etc. of the content */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 0 8px var(--verdant-green);
+            border-radius: 8px;
+            padding: 32px;
+        }
+        
+        .about-expectations {
+            /* Text, padding, boxing, etc. of the content */
+            box-shadow: 0 0 8px var(--verdant-green);
+            border-radius: 8px;
+            padding: 32px;
+            
+            h3 {
+                /* Move "What to Expect" header higher up a bit */
+                margin-top: -24px;
+            }
+            
+            ul, li {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                /* Hide bullets from listed items */
+                list-style-type: none;
+                /* Space out listed items */
+                margin-bottom: 16px;
+                
+                /* Resize icons */
+                img {
+                    width: 40px;
+                    height: auto;
+                }
+            }
+        }
+    }
+}
+
+
+
+/* Schedule Section */
+.schedule {
+    margin-bottom: 16px;
+    
+    /* Matches Layout */
+    .match-layout {
+        display: flex; /* allows for arrow to be on right side */
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px;
+        gap: 24px;
+        
+        .match-grid {
+            flex-wrap: wrap;
+            display: grid;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            align-content: space-evenly;
+            /* Stretch across majority (90%) of space within container */
+            width: 90%;
+            /* Keep 3x2 grid displaying the games
+            * repeat(3, 1fr) = Create 3 cols with equal width of 1fr */
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin: 0 auto;
+        }
+        
+        /* Arrow Button */
+        .scroll-btn {
+            background-color: transparent;
+            color: var(--ocean-blue);
+            border: none;
+            padding-right: 8px;
+            font-size: 40px;
+            
+            &:hover {
+                cursor: pointer;
+                transition: all 0.3s ease;
+                color: var(--maple-red);
+            }
+        }
+    }
+    
+    /* Match Cards */
+    .match-card {
+        padding: 32px;
+        border-radius: 8px;
+        box-shadow: 0 0 8px var(--ocean-blue);
+        transition: transform 0.2s ease;
+        
+        &:hover {
+            transform: translateY(-4px);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px var(--maple-red);
+        }
+        
+        p {
+            /* Space text in cards */
+            margin-bottom: 8px;
+        }
+    }
+    
+    /* Display upcoming matches once arrow pressed (animate them in and only show those four games) */
+    #upcoming-matches {
+        display: none; /* for the meantime */
+    }
+}
+
+
+
+/* Bracket Section */
+/* Temporarily Fine: Will Modify once figure out Bracket Model */
+.bracket {
+    form {
+        padding: 16px;
+        display: flex;
+        justify-content: center;
+        align-content: space-evenly;
+        flex-wrap: wrap;
+        gap: 24px;
+        
+        label {
+            /* "Placeholder" text in dropdown */
+            display: none;
+        }
+    }
+}
+
+
+
+/* Universal Submit Button Class */
+.submitBtn {
+    padding: 10px 20px;
+    border: none;
+    background-color: var(--ocean-blue);
+    color: var(--cloud-white);
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    
+    &:hover {
+        background-color: var(--patriot-blue);
+    }
+}
+
+
+
+/* Bracket Challenge Leaderboard */
+/* Temporary Modifications until have actual users and new podium implementation */
+.leaderboard {
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+    padding: 16px;
+
+    h2 {
+        margin-bottom: 16px;
+    }
+
+    p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 16px;
+        border-radius: 8px;
+        box-shadow: 0 0 8px var(--sunset-orange);
+        margin-bottom: 16px;
+    }
+    
+    .leaderboard-table {
+        padding-left: 24px;
+        padding-right: 24px;
+        width: 100%;
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+
+        .leaderboard-entries {
+            /* Color Code Podium Players */
+            #first-place {
+                background-color: var(--gold);
+            }
+            #second-place {
+                background-color: var(--silver);
+            }
+            #third-place {
+                background-color: var(--bronze);
+            }
+        }
+    }
+}
+
+
+
+/* Community Gallery */
+/* Temporary until center carousels properly */
+.gallery {
+    margin-bottom: 16px;
+    
+    .gallery-layout {
+        /* padding: top, right, bottom, left */
+        padding: 32px 16px 0 16px;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 32px;
+    }
+    
+    /* Description on left side */
+    .gallery-description {
+        padding: 16px;
+        border-radius: 8px;
+        box-shadow: 0 0 8px var(--charcoal);
+        text-align: center;
+        align-content: center;
+    }
+    
+    /* Carousels on right */
+    .gallery-media {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        align-items: center;
+        justify-items: center;
+
+        /* Photos Section */
+        .photos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            #current-photo {
+                border-radius: 8px;
+                max-width: fit-content;
+                width: 100%;
+            }
+        }
+        
+        /* Video Section */
+        .videos {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            iframe {
+                border-radius: 8px;
+                width: 100%;
+                max-width: fit-content;
+                height: auto;
+                /* Maintain video proportions */
+                aspect-ratio: 16 / 9;
+            }
+        }
+        
+        /* Buttons */
+        .carousel-btn {
+            background-color: transparent;
+            border: none;
+            font-size: 36px;
+
+            &:hover {
+                cursor: pointer;
+                transition: all 0.3s ease;
+                color: var(--maple-red);
+            }
+        }
+
+        /* Flip arrow buttons to have left ones */
+        #prev-photo, #prev-video {
+            transform: scaleX(-1);
+        }
+    }
+}
+
+
+
+/* Country Dropdown Selections */
+.country-dropdown {
+    list-style: none;
+    position: relative;
+    width: 250px;
+    user-select: none;
+    cursor: pointer;
+    border: 1px solid var(--ash-grey);
+    border-radius: 8px;
+    background: white;
+    font-family: var(--kalam-font);
+    
+    .selected {
+        font-weight: bold;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .dropdown-list {
+        padding: 0;
+        margin: 0;
+        max-height: 250px;
+        overflow-y: auto;
+        position: absolute;
+        top: 100%;
+        border: 1px solid #ccc;
+        border-top: none;
+        background: white;
+        display: none;
+        
+        li {
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            
+            &:hover {
+                background-color: var(--ash-grey);
+            }
+        }
+    }
+}
+.country-dropdown.open .dropdown-list {
+    z-index: 1000;
+    display: block;
+}
+/* Flags */
+.flag-icon {
+    width: 24px;
+    height: auto;
+    object-fit: cover;
+    border: 1px solid transparent;
+}
+
+
+
+/* RSVP Section */
+.rsvp {
+    margin-bottom: 16px;
+    
+    .rsvp-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        padding: 16px;
+        text-align: center;
+        justify-content: space-between;
+        gap: 24px;
+        
+        .rsvp-left {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px var(--maple-red);
+        }
+        
+        .rsvp-right {
+            display: flex;
+            flex-direction: column;
+            border-radius: 8px;
+            box-shadow: 0 0 8px var(--maple-red);
+            
+            .rsvp-list {
+                list-style: none;
+            }
+        }
+    }
+    
+    #rsvp-form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 24px;
+        
+        label {
+            /* hide since using placeholder text */
+            display: none;
+        }
+        
+        input[type="text"],
+        input[type="email"] {
+            padding: 10px;
+            border: 1px solid var(--ash-grey);
+            border-radius: 8px;
+            font-family: var(--kalam-font);
+            font-size: 16px;
+            width: 250px;
+            box-sizing: border-box;
+        }
+    }
+}
+/* Check if any input field was invalid from RSVP form */
+.invalid {
+    border: 1px solid var(--maple-red) !important;
+    background-color: rgba(255, 0, 0, 0.2) !important;
+    transition: background-color 0.2s ease, border 0.2s ease;
+}
+
+
+
+/* Modal Section */
+/* Contains both Bracket & RSVP Modals */
+.modal {
+    visibility: hidden; /* Hide the modal by default */
+
+    /* RSVP/General Modal Stylings */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Create a darkening overlay */
+    background-color: rgba(46, 46, 46, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: visibility 0.3s ease, opacity 0.3s ease;
+    z-index: 1000;
+    
+    .rsvp-modal-content {
+        background-color: var(--cloud-white);
+        padding: 32px;
+        border-radius: 10px;
+        text-align: center;
+        position: relative;
+        max-width: 500px;
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 16px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--charcoal);
+        }
+    }
+    
+}
+
+.modal.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Bracket Modal Specifics */
+#bracket-modal {
+    .bracket-modal-content {
+        display: flex;
+        max-width: 800px;
+        padding: 0;
+        background-color: var(--charcoal);
+        color: var(--cloud-white);
+        overflow: hidden;
+        border-radius: 12px;
+        /* Create a framed effect */
+        box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+        
+        .bracket-left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 32px;
+            gap: 16px;
+            
+            #bracket-modal-title {
+                font-weight: 700;
+                font-size: 48px;
+                color: var(--gold);
+            }
+            
+            #winner-flag img {
+                width: 240px;
+                height: auto;
+                border: none;
+            }
+            
+            #bracket-modal-description {
+                font-family: var(--ticker-font);
+                font-size: large;
+                color: var(--ash-grey);
+                text-transform: uppercase;
+                margin-top: 0;
+            }
+        }
+        
+        .bracket-right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+
+            .close-btn {
+                position: absolute;
+                top: 10px;
+                right: 16px;
+                background: none;
+                border: none;
+                cursor: pointer;
+                color: var(--cloud-white);
+                font-size: 24px;
+            }
+            
+            .trophy-animation {
+                height: 240px;
+                width: auto;
+                max-width: 250px;
+                /* Apply a glow animation */
+                animation: trophyGlow 2s ease-in-out infinite;
+            }
+        }
+    }
+}
+/* Bracket Modal Trophy Animation */
+@keyframes trophyGlow {
+    0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 5px var(--gold));
+    }
+    50% {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 10px var(--gold));
+    }
+}
+
+
+
+/* Explore Additional Links Section */
+.links {
+    margin-bottom: 16px;
+    padding: 0 16px 0 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    
+    /* Description Paragrpah */
+    #links-description {
+        margin-bottom: 8px;
+        text-align: center;
+        padding: 12px;
+        max-width: 100%;
+        box-shadow: 0 0 8px var(--sunset-orange);
+        border-radius: 8px;
+    }
+
+    .block {
+        display: block;
+        align-self: center;
+        margin-bottom: 8px;
+        padding: 16px;
+        width: 90%;
+        box-shadow: 0 0 6px var(--ash-grey);
+        border-radius: 8px;
+
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(46, 46, 46, 0.4);
+        }
+
+        article, h3 {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 8px;
+            justify-content: baseline;
+            align-items: center;
+        }
+    }
+}
+
+
+
+/* Footer Section */
+footer {
+    margin-bottom: 16;
+    text-align: center;
+    
+    h2 {
+        margin-bottom: 8px;
+    }
+    
+    p {
+        font-family: var(--ticker-font);
+        font-size: 16px;
+        padding-bottom: 8px;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 56px;
+        margin-bottom: 16px;
+
+        a {
+            display: inline-block;
+            height: 48px;
+            width: 48px;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .dark-icon {
+                display: none;
+            }
+        }
+    }
+}
+
+
+
+/* Dark Mode Theme */
+html.dark {
+    background-color: var(--charcoal);
+    color: var(--cloud-white);
+}
+
+/* Recolor all parts of body to contrast with dark */
+html.dark body {
+    background-color: var(--charcoal);
+    color: var(--cloud-white);
+    
+    /* Headings */
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--canary-yellow);
+    }
+    
+    /* Links */
+    a {
+        color: var(--sky-blue);
+        text-decoration: none;
+        transition: all 0.4s ease;
+        
+        &:hover {
+            color: var(--sunset-orange);
+        }
+    }
+    
+    /* Navbar and Hero will stay the same */
+    /* Need to "override" header text within */
+    .hero {
+        h1 {
+            font-size: 50px;
+            color: var(--maple-red);
+        }
+        
+        h2 {
+            color: var(--patriot-blue);
+            font-size: 35px;
+        }
+    }
+    
+    .country-dropdown {
+        background-color: black;
+    }
+    
+    .dropdown-list {
+        background-color: var(--charcoal);
+        li {
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.35);
+            }
+        }
+    }
+
+    .gallery-description {
+        box-shadow: 0 0 8px var(--cloud-white);
+    }
+    .gallery-media {
+        .carousel-btn {
+            color: var(--cloud-white);
+        }
+    }
+
+    .rsvp-modal-content {
+        background-color: var(--charcoal);
+        .close-btn {
+            color: var(--cloud-white);
+        }
+    }
+
+    .block {
+        &:hover {
+            box-shadow: 0 8px 12px var(--ash-grey);
+        }
+    }
+    
+    footer {
+        .social-links {
+            a {
+                .light-icon {
+                    display: none;
+                }
+                .dark-icon {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
