@@ -454,8 +454,8 @@ a {
     .gallery-layout {
         /* padding: top, right, bottom, left */
         padding: 32px 16px 0 16px;
-        display: grid;
-        grid-template-columns: 1fr 3fr;
+        display: flex;
+        flex-direction: column;
         gap: 32px;
     }
     
