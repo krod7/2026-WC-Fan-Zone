@@ -1,0 +1,37 @@
+# ================================
+# Node / NPM
+# ================================
+node_modules/
+npm-debug.log*
+package-lock.json      # optional — some teams commit this, your call
+
+# ================================
+# Firebase
+# ================================
+.firebase/             # CLI cache folder created on deploy
+firebase-debug.log     # error logs from CLI commands
+.firebaserc            # links your local project to Firebase project name
+                       # (safe to commit actually, but low value)
+
+# ================================
+# Environment & Secrets
+# ================================
+.env
+.env.local
+.env.*.local
+*.json.key             # service account key files — nuclear option if leaked
+
+# ================================
+# macOS Junk
+# ================================
+.DS_Store
+.DS_Store?
+.Spotlight-V100
+.Trashes
+
+# ================================
+# Editor Clutter
+# ================================
+.vscode/settings.json  # personal editor prefs, not project config
+.idea/                 # JetBrains editor files
+*.swp                  # Vim swap files
