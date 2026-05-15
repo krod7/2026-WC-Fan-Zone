@@ -323,7 +323,7 @@ document.addEventListener("DOMContentLoaded", () => {
       
       // Update modal content with personalized message
       modalTitle.textContent = `RSVP Successful, ${userName}!`;
-      modalDescription.textContent = `Thank you for joining the FIFA FanZone 2026! You're all set to celebrate the beautiful game with us!`;
+      modalDescription.textContent = `Thank you for joining the World Cup FanZone 2026! You're all set to celebrate the beautiful game with us!`;
       
       // Set the modal to disappear automatically after 8 seconds
       setTimeout(() => {
